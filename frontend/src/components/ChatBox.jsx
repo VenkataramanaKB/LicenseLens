@@ -38,9 +38,9 @@ function ChatBox() {
         console.error("Missing expected fields in API response:", data);
       }
 
-      const responseText = `**Software:** ${
+      const responseText = `Software: ${
         data.software || "Unknown"
-      }\n\n**License:** ${
+      }\n\nLicense: ${
         data.license || "Not specified"
       }\n\n**Explanation:** ${data.explanation || "No details available."}`;
 

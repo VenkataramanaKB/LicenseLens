@@ -1,7 +1,7 @@
 export const fetchData = async (input) => {
   try {
     const response = await fetch(
-      `https://license-finder-gamma.vercel.app/api/${encodeURIComponent(input)}`
+      `http://localhost:5000/api/${encodeURIComponent(input)}`
     );
 
     if (!response.ok) {
