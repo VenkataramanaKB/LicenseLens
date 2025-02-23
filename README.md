@@ -1,66 +1,90 @@
-# LicenseLens
+#
+```markdown
+# License Lens
 
-LicenseLens is a tool designed to help you quickly find the license of any software and understand its terms, permissions, and restrictions. Whether you're a developer, legal professional, or just someone curious about software licenses, LicenseLens makes searching easier and faster.
+Discover software licenses in plain language. A web app that scrapes license information and explains it using AI.
+
+![Demo](https://via.placeholder.com/800x400?text=Demo+GIF+or+Image+Here) <!-- Add your screenshot/demo here -->
 
 ## Features
-- **Fast License Lookup:** Search for software licenses with ease.
-- **Clear Explanations:** Get detailed explanations of license terms.
-- **Multiple Access Methods:** Use the website or call the API via cURL.
-- **User-Friendly Interface:** Built with React for a smooth user experience.
-- **Powerful Backend:** Flask-based API for efficient data retrieval.
 
-## Tech Stack
-- **Frontend:** React
-- **Backend:** Flask
+- **License Lookup**: Enter a software name to find its license via web scraping
+- **AI-Powered Explanations**: Get generated explanations of licenses in simple terms using Mistral AI
+- **Follow-Up Questions**: (In Development) Chat-style interface for additional questions
+- **Local AI Processing**: Runs Mistral model locally via Ollama for privacy
+- **Modern Stack**: React frontend + Flask backend + Beautiful Soup web scraping
 
-## How to Use
-### 1. Web Interface
-Simply visit our website and enter the name of the software to find its license information.
+## Technologies
 
-### 2. API Access via cURL
-You can also access the API using cURL:
-```sh
-curl -L https://license-finder-gamma.vercel.app/api/{software_name}
+**Backend**:  
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
+![Flask](https://img.shields.io/badge/Flask-2.0%2B-lightgrey)
+![BeautifulSoup](https://img.shields.io/badge/Beautiful_Soup-4.0%2B-green)
+
+**AI**:  
+![Mistral](https://img.shields.io/badge/Mistral-AI-9cf)
+![Ollama](https://img.shields.io/badge/Ollama-Local_LLM-orange)
+
+**Frontend**:  
+![React](https://img.shields.io/badge/React-18%2B-61DAFB)
+![Vite](https://img.shields.io/badge/Vite-4.0%2B-FFD62E)
+
+## Installation
+
+### Prerequisites
+- Python 3.9+
+- Node.js 16+
+- [Ollama](https://ollama.ai/) installed locally
+- Mistral model installed (`ollama pull mistral`)
+
+### Backend Setup
+```bash
+cd backend
+pip install -r requirements.txt
+python app.py
 ```
-Replace `{software_name}` with the name of the software you want to search for.
 
-## Installation & Running Locally
-### Backend (Flask)
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/your-repo/license-lens-backend.git
-   cd license-lens-backend
-   ```
-2. Install dependencies:
-   ```sh
-   pip install -r requirements.txt
-   ```
-3. Run the Flask server:
-   ```sh
-   python app.py
-   ```
+### Frontend Setup
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
-### Frontend (React)
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/your-repo/license-lens-frontend.git
-   cd license-lens-frontend
-   ```
-2. Install dependencies:
-   ```sh
-   npm install
-   ```
-3. Start the React development server:
-   ```sh
-   npm start
-   ```
+## Usage
+
+1. Start both backend and frontend servers
+2. Visit `http://localhost:5173` (or your frontend port)
+3. Enter a software name (e.g., "React")
+4. View scraped license information
+5. Read AI-generated explanation
+6. (Coming Soon) Ask follow-up questions about the license
+
+
+
+## Troubleshooting
+
+- Ensure Ollama is running: `ollama serve`
+- Confirm CORS is enabled in Flask (included in requirements)
+- Check network requests in browser devtools
+- Verify Mistral model installation: `ollama list`
 
 ## Contributing
-We welcome contributions! Feel free to fork the repository, submit issues, and make pull requests.
+
+Contributions welcome! Please follow these steps:
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
 
 ## License
-This project is open-source and available under the [MIT License](LICENSE).
 
----
-Start exploring software licenses with ease using LicenseLens!
+[MIT](https://choosealicense.com/licenses/mit/)
+## Acknowledgements
 
+- [Ollama](https://ollama.ai/) for local AI infrastructure
+- [Mistral AI](https://mistral.ai/) for the language model
+- Beautiful Soup for web scraping capabilities
+- Flask & React communities for documentation
+```
