@@ -1,5 +1,4 @@
-#
-```markdown
+
 # License Lens
 
 Discover software licenses in plain language. A web app that scrapes license information and explains it using AI.
