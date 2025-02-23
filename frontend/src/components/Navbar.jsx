@@ -13,7 +13,7 @@ function Navbar() {
           to="/"
           className="text-gray-700 text-2xl font-bold tracking-wide transition-all hover:text-primaryGreen"
         >
-          🍃 GreenWeb
+          🍃 LicenseLens
         </Link>
 
         {/* Desktop Nav Links */}
@@ -31,7 +31,7 @@ function Navbar() {
             About
           </Link>
           <a
-            href="https://github.com/janeeshgithub"
+            href="https://github.com/VenkataramanaKB/LicenseLens"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-700 bg-white px-4 py-2 rounded transition duration-300 hover:bg-gray-100"
@@ -65,7 +65,7 @@ function Navbar() {
             About
           </Link>
           <a
-            href="https://github.com/janeeshgithub"
+            href="https://github.com/VenkataramanaKB/LicenseLens"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-700 bg-white px-4 py-2 rounded transition hover:bg-gray-100"
