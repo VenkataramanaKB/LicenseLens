@@ -3,7 +3,7 @@
 
 Discover software licenses in plain language. A web app that scrapes license information and explains it using AI.
 
-![Demo](https://via.placeholder.com/800x400?text=Demo+GIF+or+Image+Here) <!-- Add your screenshot/demo here -->
+![Demo](https://knowyourlicense.vercel.app/)
 
 ## Features
 
