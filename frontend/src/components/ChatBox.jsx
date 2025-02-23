@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { Send, Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
-import { saveAs } from "file-saver";
-import { fetchData } from "../utils/api";
 
 function ChatBox() {
   const [messages, setMessages] = useState([]);
@@ -20,23 +18,21 @@ function ChatBox() {
     try {
       console.log("Fetching data for:", input);
 
-      const data = await fetchData(input);
+      // Encode the software name to handle special characters in URLs
+      const encodedSoftware = encodeURIComponent(input.trim());
+      const response = await fetch(`http://localhost:5000/api/${encodedSoftware}`, {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+        },
+      });
 
-      // Save JSON to a text file
-      try {
-        const textContent = `Software: ${
-          data.software || "Unknown"
-        }\nLicense: ${data.license || "Not specified"}\nExplanation: ${
-          data.explanation || "No details available."
-        }`;
-        const blob = new Blob([textContent], { type: "text/plain" });
-        saveAs(blob, "api-response.txt");
-        console.log("File saved successfully as a text file.");
-      } catch (fileError) {
-        console.error("File saving error:", fileError);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
       }
 
-      console.log("API Response:", data); // Log full response
+      const data = await response.json();
+      console.log("API Response:", data);
 
       if (!data.software || !data.license || !data.explanation) {
         console.error("Missing expected fields in API response:", data);
@@ -53,7 +49,7 @@ function ChatBox() {
       console.error("API Error:", error.message);
       setMessages([
         ...newMessages,
-        { text: "Error fetching data", sender: "bot" },
+        { text: "Error: Could not connect to the server", sender: "bot" },
       ]);
     } finally {
       setLoading(false);
